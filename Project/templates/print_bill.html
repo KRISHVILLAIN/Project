@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRMS</title>
+    <link rel="icon" href="/static/img/logo.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <link rel="icon" href="/static/img/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    {%include 'msg.html'%}
+    <section id="invoice">
+        <div class="container my-5 py-5">
+
+            <div class="text-center pb-5">
+<!--                <img src="/static/img/logo_dark.png" alt="">-->
+            </div>
+
+            <div class="d-md-flex justify-content-between my-5">
+                <div>
+                    <p class="fw-bold text-primary">Invoice To</p>
+                    <h4>{{first}} {{last}}</h4>
+                    <ul class="list-unstyled m-0">
+                        <li>{{email}}</li>
+                        <li>{{address}}</li>
+                        <li>MO:{{phone}}</li>
+                        <li>ID:{{aadhar}}</li>
+                    </ul>
+                </div>
+                <div class="mt-5 mt-md-0">
+                    <p class="fw-bold text-primary">Invoice From</p>
+                    <h4>CRMS COMPANY</h4>
+                    <ul class="list-unstyled m-0">
+                        <li>crms@crmscompany.com</li>
+                        <li>Main Street Pune</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class=" d-md-flex justify-content-between align-items-center border-top border-bottom border-primary my-5 py-3">
+                <h2 class="display-6 fw-bold m-0">Invoice </h2>
+                <div>
+                    <p class="m-0 fw-medium" id="invoiceNumber"> </p>
+                    <p class="m-0 fw-medium" id="todaysDate"> <span class="fw-medium">Invoice Date:</span></p>
+                    <p class="m-0"> <span class="fw-medium">time:</span>{{time}}</p>
+                </div>
+
+            </div>
+
+            <div class="py-1 border-bottom border-primary">
+                <table class="table table-striped border my-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Item</th>
+                            <th scope="col">Description</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Car Name</td>
+                            <td>{{c_name}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Car Number</td>
+                            <td>{{c_model}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Car Type</td>
+                            <td>{{c_am}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Car Per Day Price</td>
+                            <td>{{c_price}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Pick-up Location</td>
+                            <td>{{office}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>From Date</td>
+                            <td>{{from_date}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>To Date</td>
+                            <td>{{to_date}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Total Days</td>
+                            <td>{{days}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>Total Passengers</td>
+                            <td>{{passengers}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>Driver Name</td>
+                            <td>{{driver}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">11</th>
+                            <td>Driver Per Day Amount</td>
+                            <td>{{d_bill}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">12</th>
+                            <td>Payment Type</td>
+                            <td>{{payment_type}}</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td></td>
+                            <td></td>
+                            <td class="text-primary fs-5 fw-bold">Grand-Total</td>
+                            <td class="text-primary fs-5 fw-bold">RS-{{bill}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn btn-primary m-5" onclick="window.print()">PRINT</button>
+        </div>
+
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+        // Function to generate a random invoice number (for demonstration purposes)
+        function generateInvoiceNumber() {
+            // Generate a random number with padding to make it look like an invoice number
+            return 'Invoice No:' + Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+        }
+
+        // Set the generated invoice number to the HTML element
+        document.getElementById("invoiceNumber").textContent = generateInvoiceNumber();
+
+        function getTodaysDate() {
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const today = new Date();
+            return today.toLocaleDateString(undefined, options);
+        }
+
+        // Set the formatted date to the HTML element
+        document.getElementById("todaysDate").textContent = getTodaysDate();
+
+        setTimeout(function(){
+        if ($('#msg').length>0)
+        {
+        $('#msg').remove();
+        }
+        },2000)
+    </script>
+</body>
+
+</html>

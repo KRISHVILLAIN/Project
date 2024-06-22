@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRMS</title>
+    <link rel="icon" href="/static/img/logo.png" type="image/png">
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+<!--     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+<!--    {{form.as_p}}-->
+    {% for fm in form %}
+    <table>
+     <tr>
+         <lable>{{fm.label_tag}}</lable><br>
+         <span>{{fm}}</span>
+         <td>{{fm.errors |striptags}}</td>
+     </tr>
+    </table>
+    <br>
+    {% endfor %}
+    <button type="submit">Submit</button>
+    <a href="login_view">login</a>
+</form>
+</body>
+</html>

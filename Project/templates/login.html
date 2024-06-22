@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CRMS</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+<!--    <link href="/static/img/favicon.ico" rel="icon">-->
+    <link rel="icon" href="/static/img/logo.png" type="image/png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% include 'msg.html' %}
+<h1>Login</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Login</button><a href="/">Register</a>
+</form>
+<script>
+        setTimeout(function(){
+        if ($('#msg').length>0)
+        {
+        $('#msg').remove();
+        }
+        },2000)
+    </script>
+</body>
+</html>
